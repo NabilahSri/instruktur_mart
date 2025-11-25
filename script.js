@@ -44,6 +44,8 @@ const elName = document.getElementById("customer-name");
 const elNote = document.getElementById("customer-note");
 const elWa = document.getElementById("wa-button");
 const elNameErr = document.getElementById("name-error");
+const elToast = document.getElementById("toast");
+let toastTimer = null;
 function renderMenu() {
   elMenuList.innerHTML = "";
   for (const item of menu) {
@@ -56,7 +58,13 @@ function renderMenu() {
     img.loading = "lazy";
     const t = document.createElement("div");
     t.className = "menu-title";
-    t.textContent = item.name;
+    const titleText = document.createElement("span");
+    titleText.textContent = item.name;
+    const qty = cart.get(item.id) || 0;
+    const badge = document.createElement("span");
+    badge.className = "qty-badge";
+    badge.textContent = qty > 0 ? `x${qty}` : "";
+    t.append(titleText, badge);
     const p = document.createElement("div");
     p.className = "menu-price";
     p.textContent = fIDR.format(item.price);
@@ -81,6 +89,20 @@ function updateQty(id, delta) {
   if (next === 0) cart.delete(id);
   else cart.set(id, next);
   renderCart();
+  renderMenu();
+  if (delta > 0) {
+    const item = menu.find((m) => m.id === id);
+    showToast(`${item.name} ${next}`);
+  }
+}
+function showToast(text) {
+  if (!elToast) return;
+  elToast.textContent = text;
+  elToast.classList.add("show");
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    elToast.classList.remove("show");
+  }, 1800);
 }
 function renderCart() {
   const items = [...cart.entries()];

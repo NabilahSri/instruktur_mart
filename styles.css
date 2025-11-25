@@ -104,6 +104,18 @@ body {
 }
 .menu-title {
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.qty-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #1f2937;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
 }
 .menu-price {
   color: var(--muted);
@@ -215,5 +227,24 @@ body {
   color: var(--muted);
   font-size: 13px;
   text-align: center;
+}
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background: #0f131a;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
 }
 /* removed image manager */
