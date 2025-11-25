@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pemesanan Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">Instruktur Mart</div>
+      <div class="tagline">Pesan cepat, kirim ke WhatsApp</div>
+    </header>
+    <main class="container">
+      <section class="menu-section">
+        <h2>Menu</h2>
+        <div id="menu-list" class="menu-list"></div>
+      </section>
+      <section class="checkout-section">
+        <h2>Keranjang</h2>
+        <div id="cart-empty" class="cart-empty">Keranjang kosong</div>
+        <ul id="cart-items" class="cart-items"></ul>
+        <div class="total-row">
+          <span>Total</span>
+          <strong id="cart-total">Rp 0</strong>
+        </div>
+        <div class="customer-form">
+          <label>
+            Nama
+            <input
+              id="customer-name"
+              type="text"
+              placeholder="Nama pemesan"
+              required
+            />
+            <small id="name-error" class="error-text" style="display: none"
+              >Nama wajib diisi</small
+            >
+          </label>
+          <label>
+            Catatan
+            <input
+              id="customer-note"
+              type="text"
+              placeholder="Tanpa sambal, dll"
+            />
+          </label>
+        </div>
+        <button id="wa-button" class="wa-button" disabled>
+          Pesan via WhatsApp
+        </button>
+      </section>
+    </main>
+    <footer class="app-footer">© 2025 Instruktur Mart</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
