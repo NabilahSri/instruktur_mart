@@ -3,31 +3,31 @@ const menu = [
   {
     id: "kentang_goreng",
     name: "Kentang Goreng",
-    price: 15000,
+    price: 10000,
     img: "assets/kentang_goreng.png",
   },
   {
     id: "sosis_goreng",
     name: "Sosis Goreng",
-    price: 15000,
+    price: 10000,
     img: "assets/sosis_goreng.png",
   },
   {
     id: "spageti",
     name: "Spageti",
-    price: 20000,
+    price: 15000,
     img: "assets/spageti.png",
   },
   {
     id: "kentang_sosis",
     name: "Kentang + Sosis",
-    price: 25000,
+    price: 18000,
     img: "assets/kentang_sosis.png",
   },
   {
     id: "spageti_sosis",
     name: "Spageti + Sosis",
-    price: 28000,
+    price: 20000,
     img: "assets/spageti_sosis.png",
   },
 ];
